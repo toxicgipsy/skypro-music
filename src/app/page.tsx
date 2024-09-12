@@ -16,10 +16,10 @@ export default function Home() {
         <Link rel="stylesheet" href="/css/style.css" />
         <title>Skypro</title>
       </Head>
-      <Menu />
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <main className={styles.main}>
+            <Menu />
             <Centerblock />
             <Sidebar />
           </main>

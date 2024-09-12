@@ -1,20 +1,22 @@
 "use client";
 import Image from "next/image";
 import styles from "./Menu.module.css";
+import Link from "next/link";
 
 const Menu = () => {
   return (
     <>
       <nav className={styles.main__nav}>
         <div className={styles.nav__logo}>
-          <Image
-            className={styles.logo__image}
-            src="/img/logo.png"
-            alt="logo"
-            width={113.5}
-            height={17}
-            priority
-          />
+          <div className={styles.logo__image}>
+            <Image
+              src="/img/logo.png"
+              alt="logo"
+              width={113.33}
+              height={17}
+              priority
+            />
+          </div>
         </div>
         <div className={styles.nav__burger}>
           <span className={styles.burger__line} />
@@ -34,9 +36,9 @@ const Menu = () => {
               </a>
             </li>
             <li className={styles.menu__item}>
-              <a href="../signin.html" className={styles.menu__link}>
+              <Link href="/signin" className={styles.menu__link}>
                 Войти
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
