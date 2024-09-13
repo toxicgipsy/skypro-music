@@ -1,6 +1,6 @@
 .main__sidebar {
   max-width: 418px;
-  padding: 20px 90px 20px 78px;
+  padding: 20px 50px 20px 40px;
 }
 
 .sidebar__personal {
@@ -18,6 +18,8 @@
   -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 12px 0 15px 0;
+
+  max-width: 100%;
 }
 
 .sidebar__personal_name {
@@ -71,7 +73,7 @@
 }
 
 .sidebar__item:not(:last-child) {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .sidebar__link {
