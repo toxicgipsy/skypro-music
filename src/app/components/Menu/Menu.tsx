@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./Menu.module.css";
-import Link from "next/link";
+// import Link from "next/link";
 
 const Menu = () => {
   return (
@@ -36,9 +36,9 @@ const Menu = () => {
               </a>
             </li>
             <li className={styles.menu__item}>
-              <Link href="/signin" className={styles.menu__link}>
+              <a href="./signin" className={styles.menu__link}>
                 Войти
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
