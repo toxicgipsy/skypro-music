@@ -1,3 +1,4 @@
+"use client";
 import classNames from "classnames";
 import Image from "next/image";
 import styles from "./Sidebar.module.css";
