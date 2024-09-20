@@ -1,10 +1,11 @@
+"use client";
 import Head from "next/head";
 import Link from "next/link";
-import Menu from "./components/Menu/Menu";
-import Centerblock from "./components/Centerblock/Centerblock";
-import ProgressBar from "./components/Player/Player";
+import Menu from "../components/Menu/Menu";
+import Centerblock from "../components/Centerblock/Centerblock";
+import ProgressBar from "../components/Player/Player";
 import styles from "./page.module.css";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 export default function Home() {
   return (

@@ -1,3 +1,5 @@
+"use client";
+import Filter from "../Filter/Filter";
 import Search from "../Search/Search";
 import styles from "./Centerblock.module.css";
 import classNames from "classnames";
@@ -7,12 +9,7 @@ const Centerblock = () => {
     <div className={classNames(styles.main__centerblock, styles.centerblock)}>
       <Search />
       <h2 className={styles.centerblock__h2}>Треки</h2>
-      <div className={classNames(styles.centerblock__filter, styles.filter)}>
-        <div className={styles.filter__title}>Искать по:</div>
-        <div className={styles.filter__button}>исполнителю</div>
-        <div className={styles.filter__button}>году выпуска</div>
-        <div className={styles.filter__button}>жанру</div>
-      </div>
+      <Filter />
       <div className={styles.centerblock__content}>
         <div className={styles.content__title}>
           <div className={classNames(styles.playlist_title__col, styles.col01)}>
