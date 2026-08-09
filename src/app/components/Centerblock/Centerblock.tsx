@@ -1,13 +1,14 @@
-import Search from "../Search/Search";
-import styles from "./Centerblock.module.css";
-import classNames from "classnames";
+import Search from '@components/Search/Search';
+import styles from './Centerblock.module.css';
+import classNames from 'classnames';
+import Link from 'next/link';
 
 const Centerblock = () => {
   return (
-    <div className={classNames(styles.main__centerblock, styles.centerblock)}>
+    <div className={classNames(styles.main__centerblock)}>
       <Search />
       <h2 className={styles.centerblock__h2}>Треки</h2>
-      <div className={classNames(styles.centerblock__filter, styles.filter)}>
+      <div className={classNames(styles.centerblock__filter)}>
         <div className={styles.filter__title}>Искать по:</div>
         <div className={styles.filter__button}>исполнителю</div>
         <div className={styles.filter__button}>году выпуска</div>
@@ -40,22 +41,22 @@ const Centerblock = () => {
                   </svg>
                 </div>
                 <div className={styles.track__title_text}>
-                  <a className={styles.track__title_link} href="http://">
+                  <Link className={styles.track__title_link} href="http://">
                     Guilt <span className={styles.track__title_span} />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className={styles.track__author}>
-                <a className={styles.track__author_link} href="http://">
+                <Link className={styles.track__author_link} href="http://">
                   Nero
-                </a>
+                </Link>
               </div>
               <div className={styles.track__album}>
-                <a className={styles.track__album_link} href="http://">
+                <Link className={styles.track__album_link} href="http://">
                   Welcome Reality
-                </a>
+                </Link>
               </div>
-              <div className={styles.track__time}>
+              <div>
                 <svg className={styles.track__time_svg}>
                   <use href="img/icon/sprite.svg#icon-like" />
                 </svg>
@@ -63,6 +64,7 @@ const Centerblock = () => {
               </div>
             </div>
           </div>
+
           <div className={styles.playlist__item}>
             <div className={styles.playlist__track}>
               <div className={styles.track__title}>
@@ -72,22 +74,55 @@ const Centerblock = () => {
                   </svg>
                 </div>
                 <div className={styles.track__title_text}>
-                  <a className={styles.track__title_link} href="http://">
-                    Elektro <span className="track__title-span" />
-                  </a>
+                  <Link className={styles.track__title_link} href="http://">
+                    Sign of the times <span className={styles.track__title_span} />
+                  </Link>
                 </div>
               </div>
               <div className={styles.track__author}>
-                <a className={styles.track__author_link} href="http://">
-                  Dynoro, Outwork, Mr. Gee
-                </a>
+                <Link className={styles.track__author_link} href="http://">
+                  Harry Styles
+                </Link>
               </div>
               <div className={styles.track__album}>
-                <a className={styles.track__album_link} href="http://">
-                  Elektro
-                </a>
+                <Link className={styles.track__album_link} href="http://">
+                  Erskine
+                </Link>
               </div>
-              <div className={styles.track__time}>
+              <div>
+                <svg className={styles.track__time_svg}>
+                  <use href="img/icon/sprite.svg#icon-like" />
+                </svg>
+                <span className={styles.track__time_text}>3:44</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.playlist__item}>
+            <div className={styles.playlist__track}>
+              <div className={styles.track__title}>
+                <div className={styles.track__title_image}>
+                  <svg className={styles.track__title_svg}>
+                    <use href="img/icon/sprite.svg#icon-note" />
+                  </svg>
+                </div>
+                <div className={styles.track__title_text}>
+                  <Link className={styles.track__title_link} href="http://">
+                    Elektro <span className="track__title-span" />
+                  </Link>
+                </div>
+              </div>
+              <div className={styles.track__author}>
+                <Link className={styles.track__author_link} href="http://">
+                  Dynoro, Outwork, Mr. Gee
+                </Link>
+              </div>
+              <div className={styles.track__album}>
+                <Link className={styles.track__album_link} href="http://">
+                  Elektro
+                </Link>
+              </div>
+              <div>
                 <svg className={styles.track__time_svg}>
                   <use href="img/icon/sprite.svg#icon-like" />
                 </svg>

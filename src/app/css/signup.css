@@ -2,13 +2,13 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a,
@@ -29,7 +29,12 @@ ul li {
 
 @font-face {
   font-family: 'StratosSkyeng';
-  src: local("StratosSkyeng"), local("StratosSkyeng"), url("../fonts/StratosSkyeng.woff2") format("woff2"), url("../fonts/StratosSkyeng.woff") format("woff"), url("../fonts/StratosSkyeng.ttf") format("truetype");
+  src:
+    local('StratosSkyeng'),
+    local('StratosSkyeng'),
+    url('../fonts/StratosSkyeng.woff2') format('woff2'),
+    url('../fonts/StratosSkyeng.woff') format('woff'),
+    url('../fonts/StratosSkyeng.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }

@@ -1,6 +1,7 @@
-import Image from "next/image";
-import styles from "./Signin.module.css";
-import classNames from "classnames";
+import Image from 'next/image';
+import styles from './Signin.module.css';
+import classNames from 'classnames';
+import Link from 'next/link';
 
 const Signin = () => (
   <>
@@ -8,11 +9,11 @@ const Signin = () => (
       <div className={styles.container_enter}>
         <div className={styles.modal__block}>
           <form className={styles.modal__form_login} action="#">
-            <a href="../">
+            <Link href="../">
               <div className={styles.modal__logo}>
                 <Image src="/img/logo_modal.png" alt="logo" />
               </div>
-            </a>
+            </Link>
             <input
               className={classNames(styles.modal__input, styles.login)}
               type="text"
@@ -26,10 +27,10 @@ const Signin = () => (
               placeholder="Пароль"
             />
             <button className={styles.modal__btn_enter}>
-              <a href="../index.html">Войти</a>
+              <Link href="../index.html">Войти</Link>
             </button>
             <button className={styles.modal__btn_signup}>
-              <a href="signup.html">Зарегистрироваться</a>
+              <Link href="signup.html">Зарегистрироваться</Link>
             </button>
           </form>
         </div>

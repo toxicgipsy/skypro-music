@@ -20,8 +20,8 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Montserrat", sans-serif;
   color: #ffffff;
+  font-family: var(--font-montserrat), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,10 +39,20 @@ body {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
 a,
 a:visited {
   text-decoration: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   cursor: pointer;
 }
 
