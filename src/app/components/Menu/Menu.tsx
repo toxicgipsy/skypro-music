@@ -12,8 +12,8 @@ const Menu = () => {
             <Image
               src="/img/logo.png"
               alt="logo"
-              width={227}
-              height={34}
+              width={133}
+              height={17}
               priority
             />
           </div>
