@@ -1,7 +1,7 @@
-"use client";
-import Image from "next/image";
-import styles from "./Menu.module.css";
-// import Link from "next/link";
+'use client';
+import Image from 'next/image';
+import styles from './Menu.module.css';
+import Link from "next/link";
 
 const Menu = () => {
   return (
@@ -12,7 +12,7 @@ const Menu = () => {
             <Image
               src="/img/logo.png"
               alt="logo"
-              width={113.33}
+              width={133}
               height={17}
               priority
             />
@@ -26,19 +26,19 @@ const Menu = () => {
         <div className={styles.nav__menu}>
           <ul className={styles.menu__list}>
             <li className={styles.menu__item}>
-              <a href="#" className={styles.menu__link}>
+              <Link href="#" className={styles.menu__link}>
                 Главное
-              </a>
+              </Link>
             </li>
             <li className={styles.menu__item}>
-              <a href="#" className={styles.menu__link}>
+              <Link href="#" className={styles.menu__link}>
                 Мой плейлист
-              </a>
+              </Link>
             </li>
             <li className={styles.menu__item}>
-              <a href="./signin" className={styles.menu__link}>
+              <Link href="./signin" className={styles.menu__link}>
                 Войти
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

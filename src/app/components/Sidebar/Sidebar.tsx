@@ -1,10 +1,11 @@
-import classNames from "classnames";
-import Image from "next/image";
-import styles from "./Sidebar.module.css";
+import classNames from 'classnames';
+import Image from 'next/image';
+import styles from './Sidebar.module.css';
+import Link from 'next/link';
 
 const Sidebar = () => {
   return (
-    <div className={classNames(styles.main__sidebar, styles.sidebar)}>
+    <div className={classNames(styles.main__sidebar)}>
       <div className={styles.sidebar__personal}>
         <p className={styles.sidebar__personal_name}>Aman</p>
         <div className={styles.sidebar__icon}>
@@ -16,7 +17,7 @@ const Sidebar = () => {
       <div className={styles.sidebar__block}>
         <div className={styles.sidebar__list}>
           <div className={styles.sidebar__item}>
-            <a className={styles.sidebar__link} href="#">
+            <Link className={styles.sidebar__link} href="#">
               <div className={styles.sidebar__img}>
                 <Image
                   src="/img/playlist01.png"
@@ -25,10 +26,10 @@ const Sidebar = () => {
                   height={170}
                 />
               </div>
-            </a>
+            </Link>
           </div>
           <div className={styles.sidebar__item}>
-            <a className={styles.sidebar__link} href="#">
+            <Link className={styles.sidebar__link} href="#">
               <Image
                 className="sidebar__img"
                 src="/img/playlist02.png"
@@ -36,18 +37,18 @@ const Sidebar = () => {
                 width={250}
                 height={170}
               />
-            </a>
+            </Link>
           </div>
           <div className={styles.sidebar__item}>
-            <a className={styles.sidebar__link} href="#">
+            <Link className={styles.sidebar__link} href="#">
               <Image
                 className={styles.sidebar__img}
                 src="/img/playlist03.png"
                 alt="day's playlist"
                 width={250}
-                height={170}
+                height={150}
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
