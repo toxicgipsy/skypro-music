@@ -46,11 +46,7 @@ const Player = () => {
                 </svg>
               </div>
             </div>
-            <div
-              className={classNames(
-                styles.player__track_play
-              )}
-            >
+            <div className={classNames(styles.player__track_play)}>
               <div className={styles.track_play__contain}>
                 <div className={styles.track_play__image}>
                   <svg className={styles.track_play__svg}>
@@ -58,12 +54,18 @@ const Player = () => {
                   </svg>
                 </div>
                 <div className={styles.track_play__author}>
-                  <Link className={styles.track_play__author_link} href="/tracks/guilt">
+                  <Link
+                    className={styles.track_play__author_link}
+                    href="/tracks/guilt"
+                  >
                     Ты та...
                   </Link>
                 </div>
                 <div className={styles.track_play__album}>
-                  <Link className={styles.track_play__album_link} href="/tracks/guilt">
+                  <Link
+                    className={styles.track_play__album_link}
+                    href="/tracks/guilt"
+                  >
                     Баста
                   </Link>
                 </div>

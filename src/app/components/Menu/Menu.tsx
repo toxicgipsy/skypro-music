@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import styles from './Menu.module.css';
-import Link from "next/link";
+import Link from 'next/link';
 
 const Menu = () => {
   return (

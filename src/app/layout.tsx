@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Montserrat } from "next/font/google"
+import { Montserrat } from 'next/font/google';
 import './globals.css';
 
 const montserrt = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin", "cyrillic"],
-})
+  variable: '--font-montserrat',
+  subsets: ['latin', 'cyrillic'],
+});
 
 export const metadata: Metadata = {
   title: 'Skypro-music',
@@ -19,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrt.variable}`}>
-        {children}
-      </body>
+      <body className={`${montserrt.variable}`}>{children}</body>
     </html>
   );
 }

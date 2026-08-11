@@ -2,6 +2,7 @@ import Search from '@components/Search/Search';
 import styles from './Centerblock.module.css';
 import classNames from 'classnames';
 import Link from 'next/link';
+import { data } from '@/app/data';
 
 const Centerblock = () => {
   return (
@@ -32,104 +33,51 @@ const Centerblock = () => {
           </div>
         </div>
         <div className={styles.content__playlist}>
-          <div className={styles.playlist__item}>
-            <div className={styles.playlist__track}>
-              <div className={styles.track__title}>
-                <div className={styles.track__title_image}>
-                  <svg className={styles.track__title_svg}>
-                    <use href="img/icon/sprite.svg#icon-note" />
-                  </svg>
+          {data.map((track) => (
+            <div className={styles.playlist__item}>
+              <div className={styles.playlist__track}>
+                <div className={styles.track__title}>
+                  <div className={styles.track__title_image}>
+                    <svg className={styles.track__title_svg}>
+                      <use href="img/icon/sprite.svg#icon-note" />
+                    </svg>
+                  </div>
+                  <div className={styles.track__title_text}>
+                    <Link
+                      className={styles.track__title_link}
+                      href="/tracks/guilt"
+                    >
+                      {track.name} <span className={styles.track__title_span} />
+                    </Link>
+                  </div>
                 </div>
-                <div className={styles.track__title_text}>
-                  <Link className={styles.track__title_link} href="/tracks/guilt">
-                    Guilt <span className={styles.track__title_span} />
+                <div className={styles.track__author}>
+                  <Link
+                    className={styles.track__author_link}
+                    href="/tracks/guilt"
+                  >
+                    {track.author}
                   </Link>
                 </div>
-              </div>
-              <div className={styles.track__author}>
-                <Link className={styles.track__author_link} href="/tracks/guilt">
-                  Nero
-                </Link>
-              </div>
-              <div className={styles.track__album}>
-                <Link className={styles.track__album_link} href="/tracks/guilt">
-                  Welcome Reality
-                </Link>
-              </div>
-              <div>
-                <svg className={styles.track__time_svg}>
-                  <use href="img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className={styles.track__time_text}>4:44</span>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.playlist__item}>
-            <div className={styles.playlist__track}>
-              <div className={styles.track__title}>
-                <div className={styles.track__title_image}>
-                  <svg className={styles.track__title_svg}>
-                    <use href="img/icon/sprite.svg#icon-note" />
-                  </svg>
-                </div>
-                <div className={styles.track__title_text}>
-                  <Link className={styles.track__title_link} href="/tracks/guilt">
-                    Sign of the times <span className={styles.track__title_span} />
+                <div className={styles.track__album}>
+                  <Link
+                    className={styles.track__album_link}
+                    href="/tracks/guilt"
+                  >
+                    {track.album}
                   </Link>
                 </div>
-              </div>
-              <div className={styles.track__author}>
-                <Link className={styles.track__author_link} href="/tracks/guilt">
-                  Harry Styles
-                </Link>
-              </div>
-              <div className={styles.track__album}>
-                <Link className={styles.track__album_link} href="/tracks/guilt">
-                  Erskine
-                </Link>
-              </div>
-              <div>
-                <svg className={styles.track__time_svg}>
-                  <use href="img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className={styles.track__time_text}>3:44</span>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.playlist__item}>
-            <div className={styles.playlist__track}>
-              <div className={styles.track__title}>
-                <div className={styles.track__title_image}>
-                  <svg className={styles.track__title_svg}>
-                    <use href="img/icon/sprite.svg#icon-note" />
+                <div>
+                  <svg className={styles.track__time_svg}>
+                    <use href="img/icon/sprite.svg#icon-like" />
                   </svg>
+                  <span className={styles.track__time_text}>
+                    {track.duration_in_seconds}
+                  </span>
                 </div>
-                <div className={styles.track__title_text}>
-                  <Link className={styles.track__title_link} href="/tracks/guilt">
-                    Elektro <span className="track__title-span" />
-                  </Link>
-                </div>
-              </div>
-              <div className={styles.track__author}>
-                <Link className={styles.track__author_link} href="/tracks/guilt">
-                  Dynoro, Outwork, Mr. Gee
-                </Link>
-              </div>
-              <div className={styles.track__album}>
-                <Link className={styles.track__album_link} href="/tracks/guilt">
-                  Elektro
-                </Link>
-              </div>
-              <div>
-                <svg className={styles.track__time_svg}>
-                  <use href="img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className={styles.track__time_text}>2:22</span>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
