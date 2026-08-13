@@ -10,3 +10,8 @@ export type Track = {
   track_file: string;
   stared_user: number[];
 };
+
+export type TrackType = {
+  arr: Track[];
+  key: keyof Track;
+};

@@ -1,8 +1,8 @@
-export function getUniqueVaaluesKey(
-  arr: TrackType[],
-  key: keyof TrackType,
-): string[] {
+import { Track, TrackType } from '../sharedTypes/sharedTypes';
+
+export function getUniqueVaaluesKey(arr: Track[], key: keyof Track): string[] {
   const uniqValues = new Set<string>();
+  
   return;
 }
 
