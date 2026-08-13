@@ -3,6 +3,7 @@ import styles from './Centerblock.module.css';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { data } from '@/app/data';
+import { formatTime } from '@/app/utils/helper';
 
 const Centerblock = () => {
   return (
@@ -34,7 +35,7 @@ const Centerblock = () => {
         </div>
         <div className={styles.content__playlist}>
           {data.map((track) => (
-            <div className={styles.playlist__item}>
+            <div key={track._id} className={styles.playlist__item}>
               <div className={styles.playlist__track}>
                 <div className={styles.track__title}>
                   <div className={styles.track__title_image}>
@@ -72,7 +73,7 @@ const Centerblock = () => {
                     <use href="img/icon/sprite.svg#icon-like" />
                   </svg>
                   <span className={styles.track__time_text}>
-                    {track.duration_in_seconds}
+                    {formatTime(track.duration_in_seconds)}
                   </span>
                 </div>
               </div>
