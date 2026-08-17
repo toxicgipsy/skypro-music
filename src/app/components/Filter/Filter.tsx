@@ -5,34 +5,7 @@ import styles from './Filter.module.css';
 import { useState } from 'react';
 import { FilterName } from '@/sharedTypes/sharedTypes';
 import FilterItem from '../FilterItem/FilterItem';
-
-const trackList = [
-  {
-    author: 'Alexander Nakarada',
-    genre: ['Классическая музыка'],
-    year: '2005-06-11',
-  },
-  {
-    author: 'Frank Schroter',
-    genre: ['Классическая музыка'],
-    year: '2019-06-12',
-  },
-  {
-    author: 'Kevin Macleod',
-    genre: ['Классическая музыка'],
-    year: '2022-04-16',
-  },
-  {
-    author: 'Mixkit',
-    genre: ['Классическая музыка'],
-    year: '1972-06-06',
-  },
-  {
-    author: 'Waltz Piano',
-    genre: ['Классическая музыка'],
-    year: '2003-05-12',
-  },
-];
+import { data } from '@/data';
 
 const Filter = ({}) => {
   const [activeFilter, setActiveFilter] = useState<FilterName | null>(null);
@@ -46,15 +19,35 @@ const Filter = ({}) => {
     });
   };
 
-  const authors = trackList.map((track) => track.author);
-  const genres = trackList.flatMap((track) => track.genre);
+  const authors = Array.from(new Set(data.map((track) => track.author)));
+  const genres = Array.from(new Set(data.flatMap((track) => track.genre)));
   const yearOptions = ['По умолчанию', 'Сначала новые', 'Сначала старые'];
   const title = ['исполнителям', 'жанрам', 'годам'];
 
   return (
     <div className={classNames(styles.centerblock__filter)}>
       <div className={styles.filter__title}>Искать по:</div>
-      <FilterItem title="исполнителю" />
+      <FilterItem
+        title="исполнителю"
+        onClick={() => toggleFilter('author')}
+        activeFilter={activeFilter}
+        nameFilter="author"
+        options={authors}
+      />
+      <FilterItem
+        title="жанрам"
+        onClick={() => toggleFilter('genre')}
+        activeFilter={activeFilter}
+        nameFilter="genre"
+        options={genres}
+      />
+      <FilterItem
+        title="годам"
+        onClick={() => toggleFilter('year')}
+        activeFilter={activeFilter}
+        nameFilter="year"
+        options={yearOptions}
+      />
     </div>
   );
 };

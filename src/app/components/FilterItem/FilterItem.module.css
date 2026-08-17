@@ -14,3 +14,8 @@
 .filter__button:not(:last-child) {
   margin-right: 10px;
 }
+
+.active {
+  color: #ad61ff;
+  border: 1px solid #ad61ff;
+}
