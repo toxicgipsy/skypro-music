@@ -15,3 +15,5 @@ export type TrackType = {
   arr: Track[];
   key: keyof Track;
 };
+
+export type FilterName = 'author' | 'year' | 'genre';

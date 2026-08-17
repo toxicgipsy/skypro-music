@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import styles from './Player.module.css';
+import styles from './Bar.module.css';
 import Link from 'next/link';
 
-const Player = () => {
+const Bar = () => {
   return (
     <div className={styles.bar}>
       <div className={styles.bar__content}>
@@ -119,4 +119,4 @@ const Player = () => {
   );
 };
 
-export default Player;
+export default Bar;
