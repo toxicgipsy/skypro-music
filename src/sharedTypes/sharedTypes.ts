@@ -11,9 +11,14 @@ export type Track = {
   stared_user: number[];
 };
 
-export type TrackType = {
-  arr: Track[];
-  key: keyof Track;
-};
+export type FilterKey = 'author' | 'genre';
 
 export type FilterName = 'author' | 'year' | 'genre';
+
+export type FilterItemProps = {
+  title: string;
+  onClick: () => void;
+  activeFilter: FilterName | null;
+  nameFilter: FilterName;
+  options: string[];
+};

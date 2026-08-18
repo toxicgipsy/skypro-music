@@ -6,8 +6,9 @@ import { useState } from 'react';
 import { FilterName } from '@/sharedTypes/sharedTypes';
 import FilterItem from '../FilterItem/FilterItem';
 import { data } from '@/data';
+import { getUniqueValuesByKey } from '@/utils/helper';
 
-const Filter = ({}) => {
+const Filter = () => {
   const [activeFilter, setActiveFilter] = useState<FilterName | null>(null);
   const toggleFilter = (nameFilter: FilterName) => {
     setActiveFilter((previousFilter) => {
@@ -19,10 +20,9 @@ const Filter = ({}) => {
     });
   };
 
-  const authors = Array.from(new Set(data.map((track) => track.author)));
-  const genres = Array.from(new Set(data.flatMap((track) => track.genre)));
+  const authors = getUniqueValuesByKey(data, 'author');
+  const genres = getUniqueValuesByKey(data, 'genre');
   const yearOptions = ['По умолчанию', 'Сначала новые', 'Сначала старые'];
-  const title = ['исполнителям', 'жанрам', 'годам'];
 
   return (
     <div className={classNames(styles.centerblock__filter)}>
@@ -35,18 +35,18 @@ const Filter = ({}) => {
         options={authors}
       />
       <FilterItem
-        title="жанрам"
-        onClick={() => toggleFilter('genre')}
-        activeFilter={activeFilter}
-        nameFilter="genre"
-        options={genres}
-      />
-      <FilterItem
-        title="годам"
+        title="году выпуска"
         onClick={() => toggleFilter('year')}
         activeFilter={activeFilter}
         nameFilter="year"
         options={yearOptions}
+      />
+      <FilterItem
+        title="жанру"
+        onClick={() => toggleFilter('genre')}
+        activeFilter={activeFilter}
+        nameFilter="genre"
+        options={genres}
       />
     </div>
   );

@@ -1,9 +1,6 @@
-import { Track, TrackType } from '../sharedTypes/sharedTypes';
+import { FilterKey, Track } from '../sharedTypes/sharedTypes';
 
-export function getUniqueValuesByKey(
-  arr: TrackType[],
-  key: keyof TrackType,
-): string[] {
+export function getUniqueValuesByKey(arr: Track[], key: FilterKey): string[] {
   // Используем Set для хранения уникальных значений
   const uniqValues = new Set<string>();
 

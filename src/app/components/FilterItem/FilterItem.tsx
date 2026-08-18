@@ -1,13 +1,6 @@
+import { FilterItemProps } from '@/sharedTypes/sharedTypes';
 import styles from './FilterItem.module.css';
 import classNames from 'classnames';
-
-type FilterItemProps = {
-  title: string;
-  onClick: () => void;
-  activeFilter: 'author' | 'genre' | 'year' | null;
-  nameFilter: 'author' | 'genre' | 'year';
-  options: string[];
-};
 
 const FilterItem = ({
   title,
@@ -28,7 +21,13 @@ const FilterItem = ({
         {title}
       </button>
       {activeFilter === nameFilter && (
-        <div className={classNames(styles.filter__dropdown)}></div>
+        <div className={classNames(styles.filter__dropdown)}>
+          <ul className={classNames(styles.filter__list)}>
+            {options.map((option) => (
+              <li key={option}>{option}</li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );
