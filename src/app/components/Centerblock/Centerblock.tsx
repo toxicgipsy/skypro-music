@@ -1,15 +1,21 @@
+'use client';
+
 import Search from '@components/Search/Search';
 import styles from './Centerblock.module.css';
 import classNames from 'classnames';
-import Track from '../Track/Track';
+import Playlist from '../Playlist/Playlist';
 import Filter from '@components/Filter/Filter';
+import { useState } from 'react';
+import { data } from '@/data';
 
 const Centerblock = () => {
+  const [tracks] = useState(data);
+
   return (
     <div className={classNames(styles.main__centerblock)}>
       <Search />
       <h2 className={styles.centerblock__h2}>Треки</h2>
-      <Filter />
+      <Filter tracks={tracks} />
       <div className={styles.centerblock__content}>
         <div className={styles.content__title}>
           <div className={classNames(styles.playlist_title__col, styles.col01)}>
@@ -27,7 +33,7 @@ const Centerblock = () => {
             </svg>
           </div>
         </div>
-        <Track />
+        <Playlist tracks={tracks} />
       </div>
     </div>
   );

@@ -11,6 +11,18 @@ export type Track = {
   stared_user: number[];
 };
 
+export type FilterProps = {
+  tracks: Track[];
+};
+
+export type PlaylistProps = {
+  tracks: Track[];
+};
+
+export type TrackProps = {
+  track: Track;
+};
+
 export type FilterKey = 'author' | 'genre';
 
 export type FilterName = 'author' | 'year' | 'genre';
