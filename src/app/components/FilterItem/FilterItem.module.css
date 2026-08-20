@@ -1,0 +1,85 @@
+.filter__item {
+  position: relative;
+}
+
+.filter__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.filter__button {
+  padding: 6px 20px;
+  border: 1px solid #fff;
+  border-radius: 60px;
+  color: #ffffff;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 24px;
+  cursor: pointer;
+  appearance: none;
+}
+
+.filter__button:hover {
+  color: #d9b6ff;
+  border-color: #d9b6ff;
+}
+
+.filter__button:focus-visible {
+  outline: 2px solid #ad61ff;
+  outline-offset: 3px;
+}
+
+.active {
+  color: #ad61ff;
+  border-color: #ad61ff;
+}
+
+.filter__dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 10;
+  width: max-content;
+  padding: 34px;
+  border-radius: 12px;
+  background-color: #313131;
+}
+
+.filter__list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: max-content;
+  max-width: 248px;
+  max-height: 237px;
+  padding-right: 24px;
+  overflow-y: auto;
+  color: #fff;
+}
+
+.filter__list li {
+  font-size: 20px;
+  line-height: 24px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.filter__list li:hover {
+  color: #b672ff;
+  text-decoration: underline;
+}
+
+.filter__list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.filter__list::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(75, 73, 73, 1);
+}
+
+.filter__list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #fff;
+}

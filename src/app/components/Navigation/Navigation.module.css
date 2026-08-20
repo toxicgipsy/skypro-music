@@ -29,6 +29,16 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  border: none;
+  background: transparent;
+  padding: 13px 0;
+  cursor: pointer;
+  appearance: none;
+}
+
+.nav__burger:focus-visible {
+  outline: 2px solid #ad61ff;
+  outline-offset: 4px;
 }
 
 .nav__menu {
