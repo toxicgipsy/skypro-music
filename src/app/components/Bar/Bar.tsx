@@ -1,10 +1,42 @@
+'use client';
+
 import classNames from 'classnames';
 import styles from './Bar.module.css';
 import Link from 'next/link';
+import { useAppDispatch, useAppSelector } from '@/store/store';
+import { useEffect, useRef } from 'react';
+import { setIsPlaying } from '@/store/features/trackSlice';
 
 const Bar = () => {
+  const currentTrack = useAppSelector((state) => state.tracks.currentTrack);
+  const isPlaying = useAppSelector((state) => state.tracks.isPlaying);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  }, [currentTrack, dispatch]);
+
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  if (!currentTrack) return null;
+
+  const playTrack = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+      dispatch(setIsPlaying(true));
+    }
+  };
+
+  const pauseTrack = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      dispatch(setIsPlaying(false));
+    }
+  };
+
   return (
     <div className={styles.bar}>
+      <audio controls ref={audioRef} src={currentTrack?.track_file}></audio>
       <div className={styles.bar__content}>
         <div className={styles.bar__player_progress} />
         <div className={styles.bar__player_block}>
@@ -15,7 +47,10 @@ const Bar = () => {
                   <use href="img/icon/sprite.svg#icon-prev" />
                 </svg>
               </div>
-              <div className={classNames(styles.player__btn_play)}>
+              <div
+                onClick={isPlaying ? pauseTrack : playTrack}
+                className={classNames(styles.player__btn_play)}
+              >
                 <svg className={styles.player__btn_play_svg}>
                   <use xlinkHref="img/icon/sprite.svg#icon-play" />
                 </svg>
@@ -58,7 +93,7 @@ const Bar = () => {
                     className={styles.track_play__author_link}
                     href="/tracks/guilt"
                   >
-                    Ты та...
+                    {currentTrack.name}
                   </Link>
                 </div>
                 <div className={styles.track_play__album}>
@@ -66,7 +101,7 @@ const Bar = () => {
                     className={styles.track_play__album_link}
                     href="/tracks/guilt"
                   >
-                    Баста
+                    {currentTrack.author}
                   </Link>
                 </div>
               </div>
