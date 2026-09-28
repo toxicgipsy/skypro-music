@@ -6,7 +6,7 @@ const Playlist = ({ tracks }: PlaylistProps) => {
   return (
     <div className={styles.content__playlist}>
       {tracks.map((track) => (
-        <Track track={track} key={track._id} />
+        <Track track={track} playlist={tracks} key={track._id} />
       ))}
     </div>
   );
