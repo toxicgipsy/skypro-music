@@ -52,14 +52,25 @@
   justify-content: flex-start;
 }
 
+.progressContainer {
+  position: relative;
+  width: 100%;
+}
+
+.timePanel {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  font-size: 12px;
+  line-height: 1;
+  color: #696969;
+  white-space: nowrap;
+}
+
 .player__controls {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
+  align-items: center;
   padding: 0 27px 0 31px;
 }
 
@@ -69,16 +80,15 @@
 .player__btn_repeat,
 .player__btn_shuffle {
   padding: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .player__btn_prev {
   margin-right: 23px;
+  color: #d9d9d9;
 }
 
 .player__btn_prev_svg {
@@ -88,61 +98,85 @@
 
 .player__btn_play {
   margin-right: 23px;
+  color: #d9d9d9;
 }
 
 .player__btn_play_svg {
   width: 22px;
   height: 20px;
-  fill: #d9d9d9;
 }
 
 .player__btn_next {
   margin-right: 28px;
-  fill: #a53939;
+  color: #d9d9d9;
 }
 
 .player__btn_next_svg {
   width: 15px;
   height: 14px;
-  fill: inherit;
-  stroke: #d9d9d9;
 }
 
 .player__btn_repeat {
   margin-right: 24px;
+  color: #696969;
+  transition: color 0.2s ease;
 }
 
 .player__btn_repeat_svg {
+  display: block;
   width: 18px;
   height: 12px;
-  fill: transparent;
-  stroke: #696969;
+  color: inherit;
+  fill: currentColor;
 }
 
 .player__btn_shuffle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  color: #696969;
+  transition: color 0.2s ease;
 }
 
 .player__btn_shuffle_svg {
+  display: block;
   width: 19px;
   height: 12px;
-  fill: transparent;
-  stroke: #696969;
+  color: inherit;
+  fill: currentColor;
+}
+
+.player__btn_repeat:hover,
+.player__btn_shuffle:hover {
+  color: #ffffff;
+}
+
+._btn_active {
+  color: #ffffff;
 }
 
 .player__track_play {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
+}
+
+.player__btn_repeat,
+.player__btn_shuffle {
+  color: #696969;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.player__btn_repeat:hover,
+.player__btn_shuffle:hover,
+._btn_active {
+  color: #ffffff;
+}
+
+.player__btn_repeat_svg,
+.player__btn_shuffle_svg {
+  fill: currentColor;
+}
+
+._btn_active {
+  color: #ffffff;
 }
 
 .track_play__contain {
