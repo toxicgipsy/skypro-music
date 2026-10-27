@@ -21,6 +21,7 @@ export type PlaylistProps = {
 
 export type TrackProps = {
   track: Track;
+  playlist: Track[];
 };
 
 export type FilterKey = 'author' | 'genre';

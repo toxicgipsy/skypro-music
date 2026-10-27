@@ -3,10 +3,14 @@
 import { TrackProps } from '@/sharedTypes/sharedTypes';
 import styles from './Track.module.css';
 import { formatTime } from '@/utils/helper';
-import { setCurrentTrack, setIsPlaying } from '@/store/features/trackSlice';
+import {
+  setCurrentPlaylist,
+  setCurrentTrack,
+  setIsPlaying,
+} from '@/store/features/trackSlice';
 import { useAppDispatch, useAppSelector } from '@/store/store';
 
-const Track = ({ track }: TrackProps) => {
+const Track = ({ track, playlist }: TrackProps) => {
   const dispatch = useAppDispatch();
   const currentTrack = useAppSelector((state) => state.tracks.currentTrack);
   const isPlaying = useAppSelector((state) => state.tracks.isPlaying);
@@ -15,6 +19,7 @@ const Track = ({ track }: TrackProps) => {
   const onClickTrack = () => {
     dispatch(setCurrentTrack(track));
     dispatch(setIsPlaying(true));
+    dispatch(setCurrentPlaylist(playlist));
   };
   return (
     <div className={styles.playlist__item} onClick={onClickTrack}>
