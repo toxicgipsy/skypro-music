@@ -20,7 +20,7 @@ const Signin = () => {
   const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
-  const onSubmit = (e: MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const onSubmit = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setErrorMassage('');
     if (!email.trim() || !password.trim()) {
@@ -30,7 +30,7 @@ const Signin = () => {
 
     authUser({ email, password })
       .then((respone) => {
-        respone.data;
+        return respone;
       })
       .catch((error) => {
         if (error instanceof AxiosError) {
@@ -43,7 +43,7 @@ const Signin = () => {
           }
         }
       })
-      .finaly(() => {
+      .finally(() => {
         setIsLoading(false);
       });
   };

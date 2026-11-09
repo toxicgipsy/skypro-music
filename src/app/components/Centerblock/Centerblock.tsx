@@ -5,12 +5,9 @@ import styles from './Centerblock.module.css';
 import classNames from 'classnames';
 import Playlist from '../Playlist/Playlist';
 import Filter from '@components/Filter/Filter';
-import { useState } from 'react';
-import { data } from '@/data';
+import { CenterblockProps } from '@/sharedTypes/sharedTypes';
 
-const Centerblock = () => {
-  const [tracks] = useState(data);
-
+const Centerblock = ({ tracks }: CenterblockProps) => {
   return (
     <div className={classNames(styles.main__centerblock)}>
       <Search />
