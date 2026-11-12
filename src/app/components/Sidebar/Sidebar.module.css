@@ -23,6 +23,10 @@
 }
 
 .sidebar__personal_name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -32,11 +36,22 @@
 }
 
 .sidebar__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
   width: 43px;
   height: 43px;
   background-color: #313131;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.sidebar__icon:focus-visible {
+  outline: 2px solid #b672ff;
+  outline-offset: 4px;
 }
 
 .sidebar__block {

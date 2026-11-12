@@ -24,6 +24,16 @@ const Bar = () => {
   const [volume, setVolume] = useState(100);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const hasTrack = currentTrack !== null;
+
+  useEffect(() => {
+    if (!hasTrack) return;
+
+    const audio = audioRef.current;
+    return () => {
+      audio?.pause();
+    };
+  }, [hasTrack]);
 
   useEffect(() => {
     const audio = audioRef.current;
