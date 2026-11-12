@@ -25,7 +25,10 @@ export type TrackProps = {
 };
 
 export type CenterblockProps = {
-  tracks: Track;
+  tracks: Track[];
+  title?: string;
+  isLoading?: boolean;
+  message?: string;
 };
 
 export type FilterKey = 'author' | 'genre';

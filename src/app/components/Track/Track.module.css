@@ -2,12 +2,13 @@
   width: 100%;
   display: block;
   margin-bottom: 12px;
+  cursor: pointer;
 }
 
 .playlist__track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 447fr) minmax(0, 321fr) minmax(0, 245fr) 90px;
+  gap: 16px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -31,10 +32,11 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 447px;
+  min-width: 0;
 }
 
 .track__title_image {
+  flex-shrink: 0;
   width: 51px;
   height: 51px;
   padding: 16px;
@@ -75,7 +77,7 @@
 }
 
 .track__author {
-  width: 321px;
+  min-width: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,7 +96,27 @@
 }
 
 .track__album {
-  width: 245px;
+  min-width: 0;
+}
+
+.track__title_text {
+  min-width: 0;
+}
+
+.track__title_link,
+.track__author_link,
+.track__album_link {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track__time {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
 }
 
 .track__album_link {
@@ -106,6 +128,7 @@
 }
 
 .track__time_svg {
+  flex-shrink: 0;
   width: 14px;
   height: 12px;
   margin-right: 17px;

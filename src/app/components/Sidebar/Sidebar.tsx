@@ -1,7 +1,6 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import styles from './Sidebar.module.css';
-import Link from 'next/link';
+import SelectionCard from '../SelectionCard/SelectionCard';
 
 const Sidebar = () => {
   return (
@@ -17,38 +16,25 @@ const Sidebar = () => {
       <div className={styles.sidebar__block}>
         <div className={styles.sidebar__list}>
           <div className={styles.sidebar__item}>
-            <Link className={styles.sidebar__link} href="/music/category/1">
-              <div className={styles.sidebar__img}>
-                <Image
-                  src="/img/playlist01.png"
-                  alt="day's playlist"
-                  width={250}
-                  height={170}
-                />
-              </div>
-            </Link>
+            <SelectionCard
+              id={2}
+              src="/img/playlist01.png"
+              title="Плейлист дня"
+            />
           </div>
           <div className={styles.sidebar__item}>
-            <Link className={styles.sidebar__link} href="/music/category/2">
-              <Image
-                className="sidebar__img"
-                src="/img/playlist02.png"
-                alt="day's playlist"
-                width={250}
-                height={170}
-              />
-            </Link>
+            <SelectionCard
+              id={3}
+              src="/img/playlist02.png"
+              title="Танцевальные хиты"
+            />
           </div>
           <div className={styles.sidebar__item}>
-            <Link className={styles.sidebar__link} href="/music/category/3">
-              <Image
-                className={styles.sidebar__img}
-                src="/img/playlist03.png"
-                alt="day's playlist"
-                width={250}
-                height={150}
-              />
-            </Link>
+            <SelectionCard
+              id={4}
+              src="/img/playlist03.png"
+              title="Инди-заряд"
+            />
           </div>
         </div>
       </div>

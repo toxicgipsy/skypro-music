@@ -1,0 +1,43 @@
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 447fr) minmax(0, 321fr) minmax(0, 245fr) 90px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 51px;
+  margin-bottom: 12px;
+  gap: 16px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex: 447;
+  min-width: 0;
+  gap: 17px;
+}
+
+.cover {
+  display: block;
+  flex: 0 0 51px;
+  line-height: 0;
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+}
+
+.author {
+  flex: 321;
+  min-width: 0;
+}
+
+.album {
+  flex: 245;
+  min-width: 0;
+}
+
+.duration {
+  flex: 0 0 45px;
+}

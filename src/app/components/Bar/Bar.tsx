@@ -157,7 +157,7 @@ const Bar = () => {
                 className={styles.player__btn_prev}
               >
                 <svg className={styles.player__btn_prev_svg}>
-                  <use href="img/icon/sprite.svg#icon-prev" />
+                  <use href="/img/icon/sprite.svg#icon-prev" />
                 </svg>
               </div>
               <div
@@ -187,7 +187,7 @@ const Bar = () => {
               </div>
               <div onClick={onNextTrack} className={styles.player__btn_next}>
                 <svg className={styles.player__btn_next_svg}>
-                  <use href="img/icon/sprite.svg#icon-next" />
+                  <use href="/img/icon/sprite.svg#icon-next" />
                 </svg>
               </div>
               <div
@@ -202,7 +202,7 @@ const Bar = () => {
                 )}
               >
                 <svg className={styles.player__btn_repeat_svg}>
-                  <use href="img/icon/sprite.svg#icon-repeat" />
+                  <use href="/img/icon/sprite.svg#icon-repeat" />
                 </svg>
               </div>
               <div
@@ -216,7 +216,7 @@ const Bar = () => {
                 )}
               >
                 <svg className={styles.player__btn_shuffle_svg}>
-                  <use href="img/icon/sprite.svg#icon-shuffle" />
+                  <use href="/img/icon/sprite.svg#icon-shuffle" />
                 </svg>
               </div>
             </div>
@@ -224,16 +224,22 @@ const Bar = () => {
               <div className={styles.track_play__contain}>
                 <div className={styles.track_play__image}>
                   <svg className={styles.track_play__svg}>
-                    <use href="img/icon/sprite.svg#icon-note" />
+                    <use href="/img/icon/sprite.svg#icon-note" />
                   </svg>
                 </div>
                 <div className={styles.track_play__author}>
-                  <span className={styles.track_play__author_link}>
+                  <span
+                    className={styles.track_play__author_link}
+                    title={currentTrack.name}
+                  >
                     {currentTrack.name}
                   </span>
                 </div>
                 <div className={styles.track_play__album}>
-                  <span className={styles.track_play__album_link}>
+                  <span
+                    className={styles.track_play__album_link}
+                    title={currentTrack.author}
+                  >
                     {currentTrack.author}
                   </span>
                 </div>
@@ -246,17 +252,7 @@ const Bar = () => {
                   )}
                 >
                   <svg className={styles.track_play__like_svg}>
-                    <use href="img/icon/sprite.svg#icon-like" />
-                  </svg>
-                </div>
-                <div
-                  className={classNames(
-                    styles.track_play__dislike,
-                    styles._btn_icon,
-                  )}
-                >
-                  <svg className={styles.track_play__dislike_svg}>
-                    <use href="img/icon/sprite.svg#icon-dislike" />
+                    <use href="/img/icon/sprite.svg#icon-like" />
                   </svg>
                 </div>
               </div>
@@ -266,7 +262,7 @@ const Bar = () => {
             <div className={styles.volume__content}>
               <div className={styles.volume__image}>
                 <svg className={styles.volume__svg}>
-                  <use href="img/icon/sprite.svg#icon-volume" />
+                  <use href="/img/icon/sprite.svg#icon-volume" />
                 </svg>
               </div>
               <div className={classNames(styles.volume__progress, styles._btn)}>
@@ -279,6 +275,10 @@ const Bar = () => {
                   min={0}
                   max={100}
                   value={volume}
+                  aria-label="Громкость"
+                  style={{
+                    background: `linear-gradient(to right, #ffffff ${volume}%, #797979 ${volume}%)`,
+                  }}
                   name="range"
                   onChange={(e) => {
                     if (audioRef.current) {

@@ -1,18 +1,21 @@
 'use client';
 
-import authUser from '@/app/services/auth/authsApi';
+import { authUser, getTokens } from '@/app/services/auth/authsApi';
 import styles from './signin.module.css';
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChangeEvent, MouseEvent, useState } from 'react';
 import { AxiosError } from 'axios';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 const Signin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMassage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const onChangeMail = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -29,18 +32,31 @@ const Signin = () => {
     setIsLoading(true);
 
     authUser({ email, password })
-      .then((respone) => {
-        return respone;
+      .then((user) => {
+        return getTokens({ email, password }).then((token) => {
+          return { user, token };
+        });
+      })
+      .then(({ user, token }) => {
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('access', token.access);
+        localStorage.setItem('refresh', token.refresh);
+
+        router.push('/music/main/');
       })
       .catch((error) => {
         if (error instanceof AxiosError) {
           if (error.response) {
-            setErrorMassage(error.response.data.message);
+            toast.error(
+              error.response.data?.message || 'Не удалось выполнить запрос',
+            );
           } else if (error.request) {
-            setErrorMassage('Отсутствует интернет');
+            toast.error('Не удалось связаться с сервером');
           } else {
-            setErrorMassage('Неизвестная ошибка');
+            toast.error('Неизвестная ошибка');
           }
+        } else {
+          toast.error('Неизвестная ошибка');
         }
       })
       .finally(() => {
@@ -51,7 +67,7 @@ const Signin = () => {
     <>
       <Link href="/music/main">
         <div className={styles.modal__logo}>
-          <Image src="/img/logo_modal.png" alt="logo" />
+          <Image src="/img/logo_modal.png" alt="logo" width={133} height={17} />
         </div>
       </Link>
       <input
