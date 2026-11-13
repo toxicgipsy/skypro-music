@@ -9,26 +9,26 @@ import { useAppDispatch } from '@/store/store';
 import { resetPlayer } from '@/store/features/trackSlice';
 
 const Sidebar = () => {
-  const [username, setUsername] = useState<string | null>(null);
+  const [userName, setUserName] = useState<string | null>(null);
   const router = useRouter();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     try {
-      const storedUser = localStorage.getItem('user');
-      if (!storedUser || !localStorage.getItem('access')) return;
+      const savedUsername = localStorage.getItem('user');
+      if (!savedUsername) return;
+      const user: unknown = JSON.parse(savedUsername);
 
-      const user: unknown = JSON.parse(storedUser);
       if (
-        user &&
+        user !== null &&
         typeof user === 'object' &&
         'username' in user &&
         typeof user.username === 'string'
       ) {
-        setUsername(user.username);
+        setUserName(user.username);
       }
-    } catch {
-      setUsername(null);
+    } catch (error) {
+      setUserName(null);
     }
   }, []);
 
@@ -36,21 +36,24 @@ const Sidebar = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('access');
     localStorage.removeItem('refresh');
+
     dispatch(resetPlayer());
-    setUsername(null);
+    setUserName(null);
     router.replace('/auth/signin');
   };
 
   return (
     <div className={classNames(styles.main__sidebar)}>
       <div className={styles.sidebar__personal}>
-        <p className={styles.sidebar__personal_name}>{username ?? 'Гость'}</p>
+        <p className={styles.sidebar__personal_name}>
+          {userName ?? 'Посетитель'}
+        </p>
         <button
           type="button"
           className={styles.sidebar__icon}
+          aria-label="Выйти"
+          title="Выйти"
           onClick={handleLogout}
-          aria-label={username ? 'Выйти' : 'Войти'}
-          title={username ? 'Выйти' : 'Войти'}
         >
           <svg width={43} height={43} aria-hidden="true">
             <use href="/img/icon/sprite.svg#logout" />

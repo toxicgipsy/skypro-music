@@ -24,16 +24,6 @@ const Bar = () => {
   const [volume, setVolume] = useState(100);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const hasTrack = currentTrack !== null;
-
-  useEffect(() => {
-    if (!hasTrack) return;
-
-    const audio = audioRef.current;
-    return () => {
-      audio?.pause();
-    };
-  }, [hasTrack]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -56,6 +46,18 @@ const Bar = () => {
     setCurrentTime(0);
     setDuration(0);
   }, [currentTrack]);
+
+  const hasTrack = currentTrack !== null;
+
+  useEffect(() => {
+    if (!hasTrack) return;
+
+    const audio = audioRef.current;
+
+    return () => {
+      audio?.pause();
+    };
+  }, [hasTrack]);
 
   const handlePlay = () => {
     dispatch(setIsPlaying(true));

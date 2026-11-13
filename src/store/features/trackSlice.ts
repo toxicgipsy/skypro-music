@@ -21,10 +21,10 @@ const trackSlice = createSlice({
   name: 'tracks',
   initialState,
   reducers: {
-    resetPlayer: () => initialState,
     setCurrentTrack: (state, action: PayloadAction<Track>) => {
       state.currentTrack = action.payload;
     },
+    resetPlayer: () => initialState,
     setCurrentPlaylist: (state, action: PayloadAction<Track[]>) => {
       state.playlist = action.payload;
     },
@@ -103,8 +103,8 @@ const trackSlice = createSlice({
 });
 
 export const {
-  resetPlayer,
   setCurrentTrack,
+  resetPlayer,
   setIsPlaying,
   setCurrentPlaylist,
   setNextTrack,
