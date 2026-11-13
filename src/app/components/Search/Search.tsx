@@ -14,7 +14,7 @@ const Search = () => {
   return (
     <div className={classNames(styles.centerblock__search)}>
       <svg className={styles.search__svg}>
-        <use href="img/icon/sprite.svg#icon-search" />
+        <use href="/img/icon/sprite.svg#icon-search" />
       </svg>
       <input
         className={styles.search__text}

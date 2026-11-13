@@ -32,7 +32,7 @@ const Track = ({ track, playlist }: TrackProps) => {
               />
             ) : (
               <svg className={styles.track__title_svg}>
-                <use href="img/icon/sprite.svg#icon-note" />
+                <use href="/img/icon/sprite.svg#icon-note" />
               </svg>
             )}
           </div>
@@ -48,9 +48,9 @@ const Track = ({ track, playlist }: TrackProps) => {
         <div className={styles.track__album}>
           <span className={styles.track__album_link}>{track.album}</span>
         </div>
-        <div>
+        <div className={styles.track__time}>
           <svg className={styles.track__time_svg}>
-            <use href="img/icon/sprite.svg#icon-like" />
+            <use href="/img/icon/sprite.svg#icon-like" />
           </svg>
           <span className={styles.track__time_text}>
             {formatTime(track.duration_in_seconds)}

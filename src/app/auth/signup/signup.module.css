@@ -1,0 +1,20 @@
+.modal__logo {
+  composes: logo from '../layout.module.css';
+}
+
+.modal__input {
+  composes: input from '../layout.module.css';
+  margin-bottom: 30px;
+}
+
+.modal__input:last-of-type {
+  margin-bottom: 0;
+}
+
+.modal__btnSignupEnt {
+  composes: primaryButton from '../layout.module.css';
+}
+
+.errorContainer {
+  composes: error from '../layout.module.css';
+}

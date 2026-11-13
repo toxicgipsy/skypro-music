@@ -1,0 +1,23 @@
+.modal__logo {
+  composes: logo from '../layout.module.css';
+}
+
+.modal__input {
+  composes: input from '../layout.module.css';
+}
+
+.login {
+  margin-bottom: 30px;
+}
+
+.modal__btnEnter {
+  composes: primaryButton from '../layout.module.css';
+}
+
+.modal__btnSignup {
+  composes: secondaryButton from '../layout.module.css';
+}
+
+.errorContainer {
+  composes: error from '../layout.module.css';
+}

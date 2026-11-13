@@ -1,0 +1,165 @@
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  background: #242424;
+}
+
+.containerEnter {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 24px;
+}
+
+.modal__block {
+  width: 366px;
+  max-width: 100%;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 43px 44px 47px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #000000;
+  color-scheme: light;
+}
+
+.logo {
+  width: 133px;
+  height: 17px;
+  margin-bottom: 34px;
+}
+
+.logo img {
+  display: block;
+  width: 133px;
+  height: 17px;
+}
+
+.input {
+  appearance: none;
+  width: 100%;
+  min-width: 0;
+  height: 41px;
+  padding: 8px 1px;
+  border: none;
+  border-bottom: 1px solid #d0cece;
+  border-radius: 0;
+  outline: none;
+  background: #ffffff;
+  color: #000000;
+  caret-color: #000000;
+  font: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.05px;
+  transition: border-color 0.2s ease;
+}
+
+.input::placeholder {
+  color: #d0cece;
+  opacity: 1;
+}
+
+.input:focus {
+  border-bottom-color: #580ea2;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  box-shadow: 0 0 0 1000px #ffffff inset;
+}
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 60px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #580ea2;
+  color: #ffffff;
+  font: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.primaryButton:hover:not(:disabled) {
+  background: #3f007d;
+}
+
+.primaryButton:active:not(:disabled) {
+  background: #271a58;
+}
+
+.primaryButton:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline: 2px solid #580ea2;
+  outline-offset: 4px;
+}
+
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid #d0cece;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #000000;
+  font: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background: #f4f5f6;
+}
+
+.secondaryButton:active {
+  background: #d9d9d9;
+}
+
+.error {
+  align-self: stretch;
+  color: #c5221f;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.error:empty {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .containerEnter {
+    padding: 16px;
+  }
+
+  .modal__form {
+    padding: 36px 24px;
+  }
+}

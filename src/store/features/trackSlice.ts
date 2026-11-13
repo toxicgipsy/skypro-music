@@ -24,6 +24,7 @@ const trackSlice = createSlice({
     setCurrentTrack: (state, action: PayloadAction<Track>) => {
       state.currentTrack = action.payload;
     },
+    resetPlayer: () => initialState,
     setCurrentPlaylist: (state, action: PayloadAction<Track[]>) => {
       state.playlist = action.payload;
     },
@@ -103,6 +104,7 @@ const trackSlice = createSlice({
 
 export const {
   setCurrentTrack,
+  resetPlayer,
   setIsPlaying,
   setCurrentPlaylist,
   setNextTrack,
